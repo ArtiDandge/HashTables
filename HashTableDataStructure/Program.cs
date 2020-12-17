@@ -30,7 +30,8 @@ namespace HashTableDataStructure
 
             string value = myHashMap2.Get("0");
             Console.WriteLine(value);
-            Console.WriteLine("Hash code of {0} is {1}",value,value.GetHashCode());            
+            Console.WriteLine("Hash code of {0} is {1}",value,value.GetHashCode());
+            myHashMap2.Remove("17");          
         }
     }
 }

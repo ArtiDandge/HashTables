@@ -84,6 +84,31 @@ namespace HashTableDataStructure
         }
 
         /// <summary>
+        /// Method to remove word based on given key
+        /// </summary>
+        /// <param name="key">key</param>
+        public void Remove(K key)
+        {
+            int position = GetArrayPosition(key);
+            LinkedList<KeyValue<K, V>> linkedList = GetLinkedList(position);
+            bool itemFound = false;
+            KeyValue<K, V> foundItem = default(KeyValue<K, V>);
+            foreach (KeyValue<K, V> item in linkedList)
+            {
+                if (item.Key.Equals(key))
+                {
+                    itemFound = true;
+                    foundItem = item;
+                }
+            }
+            if (itemFound)
+            {
+                Console.WriteLine("Item removed : {0}", foundItem.Value);
+                linkedList.Remove(foundItem);                
+            }
+        }
+
+        /// <summary>
         /// A structure that has Key and Value
         /// </summary>
         /// <typeparam name="k">K is key</typeparam>
