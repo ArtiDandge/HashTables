@@ -19,19 +19,18 @@ namespace HashTableDataStructure
 
             MyMapNode<String, String> myHashMap2 = new MyMapNode<string, string>(20);
             string sentence = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
-            string[] word = sentence.Split(" ");
+            string[] words = sentence.Split(" ");
             int keys = 0;
-            foreach(string wc in word)
+            foreach(string word in words)
             {
                 int k = keys++;
                 string key = k.ToString();
-                myHashMap2.Add(key,wc);
+                myHashMap2.Add(word,key);
             }
 
-            string value = myHashMap2.Get("0");
-            Console.WriteLine(value);
-            Console.WriteLine("Hash code of {0} is {1}",value,value.GetHashCode());
-            myHashMap2.Remove("17");          
+            string value = myHashMap2.Get("Paranoids");
+            myHashMap2.GetArrayPosition(value);
+            myHashMap2.Remove("avoidable");          
         }
     }
 }

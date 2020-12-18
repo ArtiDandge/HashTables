@@ -28,7 +28,7 @@ namespace HashTableDataStructure
         /// </summary>
         /// <param name="key">key is Key index for its value</param>
         /// <returns></returns>
-        protected int GetArrayPosition(K key)
+        public int GetArrayPosition(K key)
         {
             int position = key.GetHashCode() % size;
             return Math.Abs(position);
@@ -103,7 +103,7 @@ namespace HashTableDataStructure
             }
             if (itemFound)
             {
-                Console.WriteLine("Item removed : {0}", foundItem.Value);
+                Console.WriteLine("Item removed : {0}", foundItem.Key);
                 linkedList.Remove(foundItem);                
             }
         }
